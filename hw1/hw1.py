@@ -138,7 +138,7 @@ def main(config):
     # Create model and optimizer
     model = MANN(config.num_classes, config.num_samples, 
                  model_size=config.model_size)
-    
+    print(device)
     model = model.to(device)
     optim = torch.optim.Adam(model.parameters(), lr = 1e-3)
     
