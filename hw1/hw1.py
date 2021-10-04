@@ -45,7 +45,7 @@ class MANN(nn.Module):
                        cell_size=64,
                        read_heads=1,
                        batch_first=True,
-                       gpu_id=-1,
+                       gpu_id=1,
                        )
 
     def forward(self, input_images, input_labels):
@@ -138,7 +138,7 @@ def main(config):
     # Create model and optimizer
     model = MANN(config.num_classes, config.num_samples, 
                  model_size=config.model_size)
-    #model.to(device)
+    model.to(device)
     optim = torch.optim.Adam(model.parameters(), lr = 1e-3)
     
     for step in range(config.training_steps):
