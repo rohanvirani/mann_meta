@@ -19,7 +19,7 @@ def get_images(paths, labels, nb_samples=None, shuffle=True):
         sampler = lambda x: random.sample(x, nb_samples)
     else:
         sampler = lambda x: x
-    images_labels = [(i, os.path.join(path, image))
+    images_labels = [(i, os.path.join(path, image.decode('utf-8')))
                      for i, path in zip(labels, paths)
                      for image in sampler(os.listdir(path))]
     if shuffle:
