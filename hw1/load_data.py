@@ -50,7 +50,7 @@ class DataGenerator(object):
     A "class" is considered a class of omniglot digits.
     """
 
-    def __init__(self, num_classes, num_samples_per_class, config={}, device = torch.device('cpu')):
+    def __init__(self, num_classes, num_samples_per_class, config={}, device = torch.device('cuda')):
         """
         Args:
             num_classes: int
