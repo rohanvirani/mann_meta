@@ -45,7 +45,7 @@ class MANN(nn.Module):
                        cell_size=64,
                        read_heads=1,
                        batch_first=True,
-                       gpu_id=1,
+                       gpu_id=-1,
                        )
 
     def forward(self, input_images, input_labels):
