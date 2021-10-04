@@ -143,6 +143,6 @@ class DataGenerator(object):
         images = torch.from_numpy(data_x)
         labels = torch.from_numpy(data_y)
 
-        images.to(device)
-        labels.to(device)
+        images.to(self.device)
+        labels.to(self.device)
         return images, labels
