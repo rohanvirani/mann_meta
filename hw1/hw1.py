@@ -139,7 +139,7 @@ def main(config):
     model = MANN(config.num_classes, config.num_samples, 
                  model_size=config.model_size)
     
-    model.to(device)
+    model = model.to(device)
     optim = torch.optim.Adam(model.parameters(), lr = 1e-3)
     
     for step in range(config.training_steps):
